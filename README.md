@@ -1,8 +1,8 @@
-#How to use AWS Translate with AWS Lex
+# How to use AWS Translate with AWS Lex
 
 This Github will demonstrate how to use AWS Translate to allow for multi-Language use of AWS Lex
 
-![alt text][architecture]
+![alt text][https://github.com/deanoreilly990/AWS-Translate-and-AWS-Lex/blob/master/architecture.png]
 
 ## Background 
 
@@ -10,8 +10,6 @@ This Github will demonstrate how to use AWS Translate to allow for multi-Languag
 In the backend Lex can be integrated with [AWS Lambda][2] to allow for access to other AWS Services and programmable functionality. 
 
 [AWS Translate][3] is an AWS Service which allows for fast and high-quality language translation. With SDK access, Translate is a easy to use solution to allow for language support for a multiple of languages. 
-
-
 
 
 ## Getting Started
@@ -38,22 +36,22 @@ In the code, the following changes need to be made to configure the code to work
 
 Save and Run. 
 
-![<link to gif](example.gif)
+![https://github.com/deanoreilly990/AWS-Translate-and-AWS-Lex/blob/master/example.gif](example.gif)
 
 
 ## Authors
 
-* **Dean O’Reilly** - *Architecture and additional code* - [Dean O’Reilly](https://github.com/PurpleBooth)
+* **Dean O’Reilly** - *Architecture and additional code* - [Dean O’Reilly](https://github.com/deanoreilly990)
  
 
 
 
-[architecture]: <image url> “Overview of Architecture“
+[architecture]: https://github.com/deanoreilly990/AWS-Translate-and-AWS-Lex/blob/master/architecture.png “Overview of Architecture“
 
-[1]https://aws.amazon.com/lex/
-[2]https://aws.amazon.com/lambda/
-[3]https://aws.amazon.com/translate/
-[4]https://aws.amazon.com/blogs/machine-learning/greetings-visitor-engage-your-web-users-with-amazon-lex/
-[5]<html link>
-[6]<JS link>
-[7]https://aws.amazon.com/sdk-for-browser/
+[1]: https://aws.amazon.com/lex/
+[2]: https://aws.amazon.com/lambda/
+[3]: https://aws.amazon.com/translate/
+[4]: https://aws.amazon.com/blogs/machine-learning/greetings-visitor-engage-your-web-users-with-amazon-lex/
+[5]: https://github.com/deanoreilly990/AWS-Translate-and-AWS-Lex/blob/master/index.html
+[6]: https://github.com/deanoreilly990/AWS-Translate-and-AWS-Lex/blob/master/backend.js
+[7]: https://aws.amazon.com/sdk-for-browser/
