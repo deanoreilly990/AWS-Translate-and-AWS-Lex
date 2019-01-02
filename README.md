@@ -2,7 +2,7 @@
 
 This Github will demonstrate how to use AWS Translate to allow for multi-Language use of AWS Lex
 
-![alt text][https://github.com/deanoreilly990/AWS-Translate-and-AWS-Lex/blob/master/architecture.png]
+![alt text](https://github.com/deanoreilly990/AWS-Translate-and-AWS-Lex/blob/master/architecture.png)
 
 ## Background 
 
@@ -43,11 +43,6 @@ Save and Run.
 
 * **Dean O’Reilly** - *Architecture and additional code* - [Dean O’Reilly](https://github.com/deanoreilly990)
  
-
-
-
-[architecture]: https://github.com/deanoreilly990/AWS-Translate-and-AWS-Lex/blob/master/architecture.png “Overview of Architecture“
-
 [1]: https://aws.amazon.com/lex/
 [2]: https://aws.amazon.com/lambda/
 [3]: https://aws.amazon.com/translate/
