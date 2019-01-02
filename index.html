@@ -1,0 +1,146 @@
+<html>
+    <!-- Author: Dean O'R
+        Date: August 2018
+    code based on: https://aws.amazon.com/blogs/machine-learning/greetings-visitor-engage-your-web-users-with-amazon-lex/
+-->
+
+<head>
+	<title>Amazon Lex and Transcribe - Get around the langugage limitation</title>
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.283.1.min.js"></script>    
+    <script src="backend.js"></script>
+	<style language="text/css">
+		input#wisdom {
+			padding: 4px;
+			font-size: 1em;
+			width: 400px
+		}
+
+		input::placeholder {
+			color: #ccc;
+			font-style: italic;
+		}
+
+		p.userRequest {
+			margin: 4px;
+			padding: 4px 10px 4px 10px;
+			border-radius: 4px;
+			min-width: 50%;
+			max-width: 85%;
+			float: left;
+			background-color: #7d7;
+		}
+
+		p.lexResponse {
+			margin: 4px;
+			padding: 4px 10px 4px 10px;
+			border-radius: 4px;
+			text-align: right;
+			min-width: 50%;
+			max-width: 85%;
+			float: right;
+			background-color: #bbf;
+			font-style: italic;
+		}
+
+		p.lexError {
+			margin: 4px;
+			padding: 4px 10px 4px 10px;
+			border-radius: 4px;
+			text-align: right;
+			min-width: 50%;
+			max-width: 85%;
+			float: right;
+			background-color: #f77;
+		}
+        #conversation{
+            width: 400px; 
+            height: 400px; 
+            border: 1px solid #ccc; 
+            background-color: #eee; 
+            padding: 4px; overflow: scroll"
+            
+	</style>
+</head>
+
+<body>
+	<h1 style="text-align:  left">Amazon Lex and AWS Transcribe</h1>
+	<p style="width: 400px">
+		This Chatbot which is designed on
+		<a href="https://aws.amazon.com/lex/" title="Amazon Lex (product)" target="_new">Amazon Lex</a> which is intergrated into your webpage using Javascript.
+        Also uses 
+        <a href="https://aws.amazon.com/translate/" title="Amazon Translate (product)" target="_new">AWS Translate</a>
+        to Translate your input of available languages to English to then be used with the Lex Bot. 
+	</p>
+	<div id="conversation"></div>
+	<form id="chatform" style="margin-top: 10px" >
+		<input type="text" id="wisdom" size="80" value="" placeholder="I need a hotel room">
+        <select name = "Language" id = "Languages">
+            <option value="ar">Arabic</option>
+            <option value="zh">Chinese (Simplified)</option>
+            <option value="zh-TW">Chinese (Traditional)</option>
+            <option value="cs">Czech</option>
+            <option value="fr">French</option>
+            <option value="de">German</option>
+            <option value="it">Italian</option>
+            <option value="ja">Japanese</option>
+            <option value="pt">Portuguese</option>
+            <option value="ru">Russian</option>
+            <option value="es">Spanish</option>
+            <option value="tr">Turkish</option>
+            </select>
+            <input type="button" id="but" value="Enter" onclick = "newinput()">
+	</form>
+	<script type="text/javascript">
+        
+        
+        function newinput(){
+            var text = document.getElementById('wisdom').value;//Gets inputed text
+            var opt = document.getElementById("Languages"); // Gets option object
+            var language = opt.options[opt.selectedIndex].value; // Gets selected language
+            showRequest(text); // 
+            Translate(text,language,'en','cust'); // Sends the entered text, language , english and the cust - which indicates to the function it is a customer input. 
+        }
+        
+        function showResponse(lexResponse) {
+            //displays the response from the lex bot on the correct interface in the HTML
+			var conversationDiv = document.getElementById('conversation');
+			var responsePara = document.createElement("P");
+			responsePara.className = 'lexResponse';
+			if (lexResponse) {
+				responsePara.appendChild(document.createTextNode(lexResponse));
+				responsePara.appendChild(document.createElement('br'));
+			}
+			conversationDiv.appendChild(responsePara);
+			conversationDiv.scrollTop = conversationDiv.scrollHeight;
+		}
+        function showRequest(daText) {
+            //Displays the entered text in the correct interface in the HTML 
+			var conversationDiv = document.getElementById('conversation');
+			var requestPara = document.createElement("P");
+			requestPara.className = 'userRequest';
+			requestPara.appendChild(document.createTextNode(daText));
+			conversationDiv.appendChild(requestPara);
+			conversationDiv.scrollTop = conversationDiv.scrollHeight;
+		}
+    </script>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
